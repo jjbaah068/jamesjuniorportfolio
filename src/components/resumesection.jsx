@@ -68,8 +68,14 @@ const education = [
   {
     degree: 'Frontend Development',
     school: 'Mest Africa',
-    period: '2025 — Present',
+    period: '2025',
     detail: 'Practical, project-based training in modern frontend development and product design.',
+  },
+  {
+    degree: 'Master of Science in Software Engineering',
+    school: 'Quantic School of Business and Technology',
+    period: '2026 — Present',
+    detail: 'Full-time, flexible program focused on advanced software engineering principles and leadership skills.',
   },
 ]
 
@@ -114,7 +120,7 @@ export default function ResumeSection() {
             <span style={{ color: 'var(--gold)', fontStyle: 'italic' }}>Education.</span>
           </h2>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <a href="/James Junior Baah.WD_.pdf" download className="btn-gold">Download CV</a>
+            <a href="/James Junior Baah-F&B_.docx.pdf" download className="btn-gold">Download CV</a>
             <a href="/contact" className="btn-ghost">Hire Me</a>
           </div>
         </div>

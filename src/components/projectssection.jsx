@@ -109,6 +109,18 @@ const projects = [
     featured: false,
     number: '09',
   },
+  {
+    id: 10,
+    title: 'Emmanuella Portfolio Project',
+    category: 'Portfolio',
+    description:
+      'A detailed portfolio project built using only HTML and Tailwind CSS.',
+    tags: ['HTML', 'Tailwind CSS'],
+    github: 'https://github.com/jjbaah068/emmanuella-portfolio',
+    live: 'https://emmanuella-portfolio-snowy.vercel.app/',
+    featured: false,
+    number: '10',
+  },
 ]
 
 const filters = ['All', 'SaaS Platform', 'eCommerce', 'Web Application', 'Landing Page', 'Portfolio', 'Mini Project']
