@@ -1,3 +1,6 @@
+import cv from "../assets/James Junior Baah-F&B_.pdf"
+
+
 const experiences = [
   {
     role: 'Frontend Developer',
@@ -120,7 +123,9 @@ export default function ResumeSection() {
             <span style={{ color: 'var(--gold)', fontStyle: 'italic' }}>Education.</span>
           </h2>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <a href="/James Junior Baah-F&B_.docx.pdf" download className="btn-gold">Download CV</a>
+            <a href={cv} 
+            download= "James Junior Baah CV.pdf"
+            className="btn-gold">Download CV</a>
             <a href="/contact" className="btn-ghost">Hire Me</a>
           </div>
         </div>

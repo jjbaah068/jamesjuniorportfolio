@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import profileimg from '../assets/images/image7.jpg'
 import manutd from '../assets/images/images.png'
+import cv from "../assets/James Junior Baah-F&B_.pdf"
 
 // Spotify tracks — replace src with real album cover images you save in assets
 const tracks = [
@@ -144,7 +145,9 @@ export default function AboutSection() {
                     </div>
 
                     <div style={{ marginTop: '3rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                        <a href="/James Junior Baah.WD_.pdf" download className="btn-gold">Download CV</a>
+                        <a href={cv} 
+                        download= "James Junior Baah CV.pdf"
+                        className="btn-gold">Download CV</a>
                         <a href="/contact" className="btn-ghost">Hire Me</a>
                     </div>
                 </div>
