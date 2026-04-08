@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import profileimg from '../assets/images/image7.jpg'
+import image from '../assets/images/image3.jpeg'
 import manutd from '../assets/images/images.png'
 import cv from "../assets/James Junior Baah-F&B_.pdf"
 
@@ -71,7 +72,7 @@ export default function AboutSection() {
                             border: '1px solid var(--gold)', zIndex: 0,
                         }} />
                         <img
-                            src={profileimg}
+                            src={image}
                             alt="James Junior Baah"
                             style={{
                                 width: '100%', aspectRatio: '4/5',
