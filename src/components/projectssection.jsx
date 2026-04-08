@@ -121,6 +121,18 @@ const projects = [
     featured: false,
     number: '10',
   },
+  {
+    id: 11,
+    title: 'Owuraku Arhin Portfolio Project',
+    category: 'Portfolio',
+    description:
+      'A detailed portfolio project built using React and JavaScript.',
+    tags: ['React', 'JavaScript'],
+    github: 'https://github.com/jjbaah068/zurichportfolio',
+    live: 'https://owurakuarhin.netlify.app/',
+    featured: false,
+    number: '11',
+  },
 ]
 
 const filters = ['All', 'SaaS Platform', 'eCommerce', 'Web Application', 'Landing Page', 'Portfolio', 'Mini Project']
