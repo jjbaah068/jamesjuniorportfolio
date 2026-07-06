@@ -133,6 +133,42 @@ const projects = [
     featured: false,
     number: '11',
   },
+  {
+    id: 12,
+    title: 'Nexux GH',
+    category: 'Web Application',
+    description:
+      'A live hosted web platform for a startup company in Ghana. Built using React and JavaScript, it features a clean design and smooth interactions.',
+    tags: ['React', 'JavaScript'],
+    github: 'https://github.com/jjbaah068/nexuxgh.com',
+    live: 'https://nexuxgh.com/',
+    featured: false,
+    number: '12',
+  },
+  {
+    id: 13,
+    title: 'PhilGood Homes',
+    category: 'Web Application',
+    description:
+      'A web platform for a real estate and apartment rental homes in Ghana. ',
+    tags: ['React', 'JavaScript'],
+    github: 'https://github.com/jjbaah068/philgoodhomes',
+    live: 'https://philgoodhomes.netlify.app/',
+    featured: false,
+    number: '13',
+  },
+  {
+    id: 14,
+    title: 'Cafe-Fausee',
+    category: 'Web Application',
+    description:
+      'A full stack web platform for a restaurant built using React and Python.',
+    tags: ['React', 'Python'],
+    github: 'https://github.com/jjbaah068/Caf-Fausse',
+    live: 'https://caf-fausse.vercel.app/',
+    featured: false,
+    number: '14',
+  },
 ]
 
 const filters = ['All', 'SaaS Platform', 'eCommerce', 'Web Application', 'Landing Page', 'Portfolio', 'Mini Project']
