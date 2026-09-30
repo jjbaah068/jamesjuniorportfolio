@@ -181,7 +181,7 @@ export default function ContactSection() {
                                     name="firstName"
                                     value={form.firstName}
                                     onChange={handleChange}
-                                    placeholder="Vincent"
+                                    placeholder="First Name"
                                     required
                                 />
                                 <FormField
@@ -189,7 +189,7 @@ export default function ContactSection() {
                                     name="lastName"
                                     value={form.lastName}
                                     onChange={handleChange}
-                                    placeholder="Agyei"
+                                    placeholder="Last Name"
                                     required
                                 />
                             </div>
@@ -356,12 +356,12 @@ export default function ContactSection() {
                                         }}
                                         onMouseEnter={e => {
                                             e.currentTarget.style.background = 'var(--charcoal-mid)'
-                                            e.currentTarget.querySelector('.social-arrow').style.transform = 'translate(3px, -3px)'
+                                            // e.currentTarget.querySelector('.social-arrow').style.transform = 'translate(3px, -3px)'
                                             e.currentTarget.querySelector('.social-icon').style.color = 'var(--gold)'
                                         }}
                                         onMouseLeave={e => {
                                             e.currentTarget.style.background = 'var(--charcoal)'
-                                            e.currentTarget.querySelector('.social-arrow').style.transform = 'translate(0, 0)'
+                                            // e.currentTarget.querySelector('.social-arrow').style.transform = 'translate(0, 0)'
                                             e.currentTarget.querySelector('.social-icon').style.color = 'var(--muted)'
                                         }}
                                     >
@@ -381,10 +381,10 @@ export default function ContactSection() {
                                                 }}>{handle}</div>
                                             </div>
                                         </div>
-                                        <span className="social-arrow" style={{
+                                        {/* <span className="social-arrow" style={{
                                             color: 'var(--muted)', fontSize: '0.9rem',
                                             transition: 'transform 0.25s ease',
-                                        }}>↗</span>
+                                        }}>↗</span> */}
                                     </a>
                                 ))}
                             </div>
