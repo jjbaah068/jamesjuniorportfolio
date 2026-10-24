@@ -20,7 +20,7 @@ const jamesportfolioRouter = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "/work", element: <Work /> },
-      { path: "/work/pearsuite", element: <Project /> },
+      { path: "/work/:slug", element: <Project /> },
       { path: "/about", element: <About /> },
       { path: "/contact", element: <Contact /> },
       // Old routes from the previous site

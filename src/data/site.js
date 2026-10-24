@@ -6,7 +6,7 @@ export const SOCIALS = {
   github: 'https://github.com/jjbaah068',
   // Add your WhatsApp number in international format, e.g. 'https://wa.me/233XXXXXXXXX'.
   // Until then the WhatsApp links open the contact page.
-  whatsapp: '',
+  whatsapp: 'https://wa.me/233202093760',
 }
 
 export const whatsappHref = SOCIALS.whatsapp || '/contact'

@@ -19,7 +19,7 @@ export default function Header({ active, current = true, action }) {
     <header style={{ position: 'sticky', top: 0, zIndex: 20, padding: '12px 0', background: 'var(--bg)' }}>
       <div className="wrap topbar">
         <Link to="/" className="mono" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, textDecoration: 'none', fontSize: 14, fontWeight: 500 }}>
-          <span style={{ width: 12, height: 12, borderRadius: 3, background: 'var(--accent)', display: 'inline-block' }}></span>jjb.studio
+          <span style={{ width: 12, height: 12, borderRadius: 3, background: 'var(--accent)', display: 'inline-block' }}></span>JJB
         </Link>
         <nav className="navlinks" aria-label="Primary">
           {links.map((l) => (

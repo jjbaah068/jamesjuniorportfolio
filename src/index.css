@@ -85,6 +85,9 @@ a:hover { color: inherit; }
 }
 
 /* ---------- Work ---------- */
+.pg-work .filterbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; padding: 12px; border-radius: 999px; background: var(--tile); }
+.pg-work .filters { display: flex; flex-wrap: wrap; gap: 6px; }
+.pg-work .filters .chip { white-space: nowrap; flex-shrink: 0; }
 .pg-work .seg { transition: background .2s, color .2s; }
 .pg-work .seg.on { background: var(--ink); color: var(--bg); }
 .pg-work .row { transition: background .25s, color .25s; }
@@ -106,6 +109,11 @@ a:hover { color: inherit; }
 }
 @media (max-width: 700px) {
   .pg-work .cards { grid-template-columns: minmax(0, 1fr); }
+  /* Phone: filters become one swipeable row, with the List/Grid toggle underneath */
+  .pg-work .filterbar { flex-direction: column; align-items: stretch; gap: 12px; padding: 0; border-radius: 0; background: none; }
+  .pg-work .filters { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 -20px; padding: 0 20px; scroll-padding: 0 20px; }
+  .pg-work .filters::-webkit-scrollbar { display: none; }
+  .pg-work .filterbar > [aria-label="View"] { align-self: flex-start; }
 }
 @media (prefers-reduced-motion: reduce) { .pg-work .swap { animation: none; } }
 

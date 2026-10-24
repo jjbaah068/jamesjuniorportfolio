@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
 import Header from '../components/header'
-import { projects as all } from '../data/projects'
+import { projects as all, projectHref } from '../data/projects'
 import { SOCIALS, whatsappHref } from '../data/site'
 
 const filterDefs = [['all', 'All'], ['web', 'Websites'], ['product', 'Products & dashboards'], ['booking', 'Booking']]
-const caseStudy = '/work/pearsuite'
 
 const chipStyle = { height: 44, padding: '0 18px', borderRadius: 999, border: '1px solid var(--line)', background: 'transparent', color: 'var(--ink)', font: 'inherit', fontSize: 15, fontWeight: 500, cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: 8 }
 const segStyle = { height: 40, padding: '0 16px', borderRadius: 999, border: 0, background: 'transparent', color: 'inherit', font: 'inherit', fontSize: 14, cursor: 'pointer' }
@@ -33,8 +32,8 @@ export default function Work() {
           <p style={{ margin: 0, maxWidth: 560, fontSize: 20, lineHeight: 1.4, color: 'var(--muted)' }}>SaaS products, dashboards, booking platforms and brand sites — built with React for clients in Ghana, the UK and the US.</p>
         </div>
 
-        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: 16, padding: 12, borderRadius: 999, background: 'var(--tile)' }}>
-          <div role="group" aria-label="Filter projects" style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+        <div className="filterbar">
+          <div role="group" aria-label="Filter projects" className="filters">
             {filterDefs.map(([id, label]) => {
               const count = id === 'all' ? all.length : all.filter((p) => p.cat === id).length
               const on = filter === id
@@ -57,7 +56,7 @@ export default function Work() {
               {items.map((p, i) => (
                 <Link
                   key={p.name}
-                  to={caseStudy}
+                  to={projectHref(p)}
                   className={'row' + (proj === i ? ' on' : '')}
                   onMouseEnter={() => setSel(i)}
                   onFocus={() => setSel(i)}
@@ -89,14 +88,14 @@ export default function Work() {
                     <span key={sx} className="mono" style={{ padding: '4px 10px', borderRadius: 8, background: 'var(--bg)', fontSize: 11 }}>{sx}</span>
                   ))}
                 </div>
-                <Link to={caseStudy} style={{ fontWeight: 600, color: 'var(--accent)', textDecoration: 'none' }}>View case study →</Link>
+                <Link to={projectHref(cur)} style={{ fontWeight: 600, color: 'var(--accent)', textDecoration: 'none' }}>View case study →</Link>
               </div>
             </aside>
           </div>
         ) : (
           <div className="cards">
             {items.map((p) => (
-              <Link key={p.name} to={caseStudy} className="card" style={{ display: 'flex', flexDirection: 'column', borderRadius: 28, background: 'var(--tile)', overflow: 'hidden', color: 'inherit' }}>
+              <Link key={p.name} to={projectHref(p)} className="card" style={{ display: 'flex', flexDirection: 'column', borderRadius: 28, background: 'var(--tile)', overflow: 'hidden', color: 'inherit' }}>
                 <div style={{ position: 'relative', aspectRatio: '5 / 4', overflow: 'hidden' }}>
                   <div className="thumb" style={{ position: 'absolute', inset: 0, background: p.tint, color: '#fff', display: 'flex', alignItems: 'flex-end', padding: 24 }}>
                     <span style={{ fontSize: 110, fontWeight: 800, letterSpacing: '-0.07em', lineHeight: 0.8 }}>{p.mono}</span>

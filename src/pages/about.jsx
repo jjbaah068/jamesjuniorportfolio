@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
 import Header from '../components/header'
-import portrait from '../assets/images/portrait.jpg'
-import cv from '../assets/James Junior Baah-F&B_.pdf'
+import portrait from '../assets/images/image3.jpeg'
+import cv from '../assets/James Junior Baah-Software Engineer_CV.pdf'
 
 const tools = [
   ['React', 'My home base. Component-driven UIs with clean state, composable patterns and interfaces that stay fast as they grow.'],
@@ -23,7 +23,6 @@ const steps = [
 ]
 
 const experience = [
-  { when: 'Present', title: 'Co-founder & Frontend Developer', org: 'Nexux · Marketing Technology Agency', body: 'Lead frontend on client builds — SaaS dashboards, booking platforms and brand sites — from scoping to launch.' },
   { when: 'Sep 2025 — Now', title: 'Frontend Developer', org: 'Red Pear Communications', body: 'Building PearSuite, a customer support SaaS — agent and admin dashboards on real-time WebSocket data, Paystack subscriptions and multi-platform chat.' },
   { when: 'Aug 2025', title: 'Frontend Developer (Internship)', org: 'MelAnu SkinCare', body: 'Built a full eCommerce platform from scratch — product listings, cart and checkout, responsive on every device.' },
   { when: 'May 2025 — Now', title: 'Frontend Developer (Trainee)', org: 'MEST Africa', body: 'Intensive frontend programme with real-world team projects in React, TanStack and modern frontend architecture.' },
@@ -59,7 +58,7 @@ export default function About() {
           </div>
           <div className="tile" style={{ background: 'var(--tile)', borderRadius: 28, padding: 'clamp(24px, 4vw, 48px)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: 32 }}>
             <p style={{ margin: 0, fontSize: 'clamp(26px, 3vw, 38px)', lineHeight: 1.18, letterSpacing: '-0.035em', fontWeight: 500 }}>
-              I’m James — a frontend developer and co-founder of <span style={{ color: 'var(--accent)' }}>Nexux</span>, a marketing technology agency in Accra.
+              I’m James Junior — a software engineer from Ghana <span style={{ color: 'var(--accent)' }}>And</span>, an alumni of Mest Africa, Ghana.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14, color: 'var(--muted)', fontSize: 17 }}>
               <p style={{ margin: 0 }}>I partner with brands and startups to turn ideas into polished React products: SaaS platforms, admin dashboards, booking sites and marketing pages.</p>
@@ -71,7 +70,7 @@ export default function About() {
         <div className="facts">
           <div className="tile" style={{ ...factTile, background: 'var(--dark)', color: 'var(--on-dark)' }}><span className="mono" style={{ ...factLabel, color: 'var(--on-dark-muted)' }}>Based in</span><span style={factValue}>Accra, Ghana</span></div>
           <div className="tile" style={{ ...factTile, background: 'var(--accent)', color: '#fff' }}><span className="mono" style={{ ...factLabel, opacity: 0.85 }}>Speciality</span><span style={factValue}>React interfaces</span></div>
-          <div className="tile" style={{ ...factTile, background: 'var(--tile)' }}><span className="mono" style={{ ...factLabel, color: 'var(--muted)' }}>Studio</span><span style={factValue}>Co-founder, Nexux</span></div>
+          <div className="tile" style={{ ...factTile, background: 'var(--tile)' }}><span className="mono" style={{ ...factLabel, color: 'var(--muted)' }}>Studio</span><span style={factValue}>Software Engineer</span></div>
           <div className="tile" style={{ ...factTile, background: 'var(--tile)' }}><span className="mono" style={{ ...factLabel, color: 'var(--muted)' }}>Off the clock</span><span style={factValue}>Football &amp; content</span></div>
         </div>
       </main>
