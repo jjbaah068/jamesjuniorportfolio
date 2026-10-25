@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
 import Header from '../components/header'
-import { projects as all, projectHref } from '../data/projects'
+import { projects as all, projectHref, coverOf } from '../data/projects'
 import { SOCIALS, whatsappHref } from '../data/site'
 
 const filterDefs = [['all', 'All'], ['web', 'Websites'], ['product', 'Products & dashboards'], ['booking', 'Booking']]
@@ -17,7 +17,7 @@ export default function Work() {
 
   const list = filter === 'all' ? all : all.filter((p) => p.cat === filter)
   const proj = Math.min(sel, list.length - 1)
-  const items = list.map((p, i) => ({ ...p, num: String(i + 1).padStart(2, '0') }))
+  const items = list.map((p, i) => ({ ...p, num: String(i + 1).padStart(2, '0'), cover: coverOf(p) }))
   const cur = items[proj]
   const isList = view === 'list'
 
@@ -78,8 +78,15 @@ export default function Work() {
                   <span className="mono" style={{ fontSize: 12, textTransform: 'uppercase', letterSpacing: '.08em', opacity: 0.85 }}>{cur.type}</span>
                   <span className="mono" style={{ fontSize: 12, opacity: 0.85 }}>{cur.num}</span>
                 </div>
-                <span className="swap" key={cur.name} style={{ fontSize: 150, fontWeight: 800, letterSpacing: '-0.07em', lineHeight: 0.8 }}>{cur.mono}</span>
-                <span className="mono" style={{ fontSize: 11, opacity: 0.75 }}>[Add project screenshot]</span>
+                {cur.cover.desktop ? (
+                  // Desktop screenshot bleeding off the right edge, with the phone shot on top when there is one
+                  <div className="pv-shots swap" key={cur.name} aria-hidden="true">
+                    <img className="pv-desktop" src={cur.cover.desktop} alt="" decoding="async" />
+                    {cur.cover.mobile && <img className="pv-mobile" src={cur.cover.mobile} alt="" decoding="async" />}
+                  </div>
+                ) : (
+                  <span className="swap" key={cur.name} style={{ fontSize: 150, fontWeight: 800, letterSpacing: '-0.07em', lineHeight: 0.8 }}>{cur.mono}</span>
+                )}
               </div>
               <div style={{ background: 'var(--tile)', borderRadius: 22, padding: 22, display: 'flex', flexDirection: 'column', gap: 12 }}>
                 <span style={{ fontSize: 16, lineHeight: 1.5 }}>{cur.desc}</span>
@@ -97,9 +104,13 @@ export default function Work() {
             {items.map((p) => (
               <Link key={p.name} to={projectHref(p)} className="card" style={{ display: 'flex', flexDirection: 'column', borderRadius: 28, background: 'var(--tile)', overflow: 'hidden', color: 'inherit' }}>
                 <div style={{ position: 'relative', aspectRatio: '5 / 4', overflow: 'hidden' }}>
-                  <div className="thumb" style={{ position: 'absolute', inset: 0, background: p.tint, color: '#fff', display: 'flex', alignItems: 'flex-end', padding: 24 }}>
-                    <span style={{ fontSize: 110, fontWeight: 800, letterSpacing: '-0.07em', lineHeight: 0.8 }}>{p.mono}</span>
-                  </div>
+                  {p.cover.desktop ? (
+                    <img className="thumb" src={p.cover.desktop} alt={`${p.name} website`} loading="lazy" decoding="async" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'left top', background: p.tint }} />
+                  ) : (
+                    <div className="thumb" style={{ position: 'absolute', inset: 0, background: p.tint, color: '#fff', display: 'flex', alignItems: 'flex-end', padding: 24 }}>
+                      <span style={{ fontSize: 110, fontWeight: 800, letterSpacing: '-0.07em', lineHeight: 0.8 }}>{p.mono}</span>
+                    </div>
+                  )}
                   <span className="mono" style={{ position: 'absolute', left: 16, top: 16, padding: '5px 10px', borderRadius: 999, background: 'rgba(255,255,255,.9)', color: '#111', fontSize: 11, textTransform: 'uppercase', letterSpacing: '.06em' }}>{p.type}</span>
                 </div>
                 <div style={{ padding: '20px 22px 24px', display: 'flex', flexDirection: 'column', gap: 6 }}>

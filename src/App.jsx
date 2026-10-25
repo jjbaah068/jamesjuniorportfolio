@@ -4,10 +4,14 @@ import Work from "./pages/work";
 import Project from "./pages/project";
 import About from "./pages/about";
 import Contact from "./pages/contact";
+import useLenis from "./hooks/useLenis";
+import Preloader from "./components/preloader";
 
 function Layout() {
+  useLenis()
   return (
     <>
+      <Preloader />
       <ScrollRestoration />
       <Outlet />
     </>

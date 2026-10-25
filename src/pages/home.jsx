@@ -3,7 +3,7 @@ import Header from '../components/header'
 import useAccraClock from '../hooks/useAccraClock'
 import { featured, projects, projectHref } from '../data/projects'
 import { SOCIALS, whatsappHref } from '../data/site'
-import portrait from '../assets/images/portrait.jpg'
+import portrait from '../assets/images/portrait.webp'
 
 const builds = ['SaaS platforms.', 'Admin dashboards.', 'Booking sites.', 'Brand websites.', 'Design systems.']
 // Spaces become non-breaking so they don't collapse inside the inline-block letters
@@ -44,7 +44,7 @@ export default function Home() {
             </h1>
             <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-end', justifyContent: 'space-between', gap: 24 }}>
               <p style={{ margin: 0, maxWidth: 460, fontSize: 20, lineHeight: 1.4, letterSpacing: '-0.01em' }}>
-                Frontend developer building React interfaces that feel <span style={{ color: 'var(--accent)', fontWeight: 600 }}>alive</span> — fast, accessible and a little bit playful.
+                Software engineer building web products that feel <span style={{ color: 'var(--accent)', fontWeight: 600 }}>alive</span> — fast, accessible and a little bit playful.
               </p>
               <Link to="/work" className="pill-btn" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, height: 52, padding: '0 24px', borderRadius: 999, background: 'var(--accent)', color: '#fff', fontWeight: 600 }}>See the work ↗</Link>
             </div>

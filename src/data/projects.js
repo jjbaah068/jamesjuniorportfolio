@@ -2,18 +2,31 @@
 // Text in [brackets] is a placeholder — replace it with the real details.
 // A shot is either a label (shows a placeholder) or { label, img } to show a screenshot.
 // Desktop screenshots fill the slide; add mobile: true for a phone screenshot.
-import nexuxMobile from '../assets/images/nexuximg.jpeg'
-import nexuxhome from '../assets/images/nexuxhome.jpeg'
-import nexuxservices from '../assets/images/nexuxservices.jpeg'
-import nexuxinsights from '../assets/images/nexuxinsights.jpeg'
+import nexuxMobile from '../assets/images/nexuximg.webp'
+import nexuxhome from '../assets/images/nexuxhome.webp'
+import nexuxservices from '../assets/images/nexuxservices.webp'
+import nexuxinsights from '../assets/images/nexuxinsights.webp'
+import scHome from '../assets/images/sportsconnecthome.webp'
+import scAthletes from '../assets/images/sportsconnect2.webp'
+import scRecruiters from '../assets/images/sportsconnect3.webp'
+import scMobile from '../assets/images/scmobile.webp'
+import lrHome from '../assets/images/ledgerockhome.webp'
+import lrLiving from '../assets/images/ledgerock2.webp'
+import lrContact from '../assets/images/ledgerock3.webp'
+import lrMobile from '../assets/images/ledgerockmobile.webp'
 
 export const projects = [
   {
     slug: 'sportsconnect', name: 'SportsConnect', client: 'Student-athlete recruitment', cat: 'product', type: 'Platform', mono: 'Sc', tint: '#0F7A52',
     desc: 'Recruitment platform connecting Ghanaian student-athletes with opportunities.', stack: ['React', 'Tailwind'],
     tagline: 'Connecting Ghanaian student-athletes with recruiters and opportunities.',
-    role: 'Frontend development', year: '[Year]',
-    shots: ['Home', 'Athlete profile', 'Search & discovery', 'Mobile view'],
+    role: 'Frontend development', year: '2025',
+    shots: [
+      { label: 'Home', img: scHome },
+      { label: 'For athletes', img: scAthletes },
+      { label: 'For recruiters', img: scRecruiters },
+      { label: 'Mobile view', img: scMobile, mobile: true },
+    ],
     story: [
       { label: 'Challenge', title: 'Talented student-athletes were hard for recruiters to find.', body: 'Student-athletes in Ghana needed a way to show their talent and get in front of schools, scouts and programmes — and recruiters needed a simple way to discover them.' },
       { label: 'Approach', title: 'Clear profiles and easy discovery.', body: 'I built the frontend in React and Tailwind around reusable components — athlete profiles, search and filters — so the platform stays fast and easy to use on any device.' },
@@ -61,7 +74,12 @@ export const projects = [
     desc: 'Website and brand for a lakeside land development near Table Rock Lake.', stack: ['React', 'Branding'],
     tagline: 'Brand and website for a lakeside land development near Table Rock Lake.',
     role: 'Brand & frontend development', year: '[Year]',
-    shots: ['Home', 'The land', 'Brand', 'Mobile view'],
+    shots: [
+      { label: 'Home', img: lrHome },
+      { label: 'Table Rock Living', img: lrLiving },
+      { label: 'Contact', img: lrContact },
+      { label: 'Mobile view', img: lrMobile, mobile: true },
+    ],
     story: [
       { label: 'Challenge', title: 'A new development needed an identity and a home online.', body: 'Ledge Rock, a lakeside land development in Missouri, needed a brand and a website to introduce the project to buyers.' },
       { label: 'Approach', title: 'Brand and site designed together.', body: 'I created the brand and built the website in React, so the look and feel stay consistent from logo to landing page.' },
@@ -70,9 +88,9 @@ export const projects = [
   },
   {
     slug: 'nexux', name: 'Nexux', client: 'Marketing technology agency', cat: 'web', type: 'Agency site', mono: 'Nx', tint: '#111111',
-    desc: 'The website for Nexux, the agency I co-founded.', stack: ['React', 'Vite', 'Tailwind'],
-    tagline: 'The website for Nexux, the marketing technology agency I co-founded.',
-    role: 'Co-founder & frontend development', year: '[Year]',
+    desc: 'The website for Nexux, a marketing technology agency.', stack: ['React', 'Vite', 'Tailwind'],
+    tagline: 'A fast, focused website for Nexux, a marketing technology agency.',
+    role: 'Frontend development', year: '[Year]',
     shots: [
       { label: 'Home', img: nexuxhome },
       { label: 'Services', img: nexuxservices },
@@ -88,6 +106,10 @@ export const projects = [
 ]
 
 export const projectHref = (p) => `/work/${p.slug}`
+
+// First desktop and phone screenshots of a project, used as covers on the Work page
+const shotImg = (p, mobile) => p.shots.find((s) => typeof s === 'object' && s.img && !!s.mobile === mobile)?.img
+export const coverOf = (p) => ({ desktop: shotImg(p, false), mobile: shotImg(p, true) })
 
 const featuredSlugs = ['sportsconnect', 'philgood-homes', 'aklass-luxury-stay']
 export const featured = featuredSlugs.map((s) => projects.find((p) => p.slug === s))
