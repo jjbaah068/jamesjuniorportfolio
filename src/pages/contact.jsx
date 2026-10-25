@@ -9,10 +9,10 @@ const needLabels = ['Website', 'Web app / SaaS', 'Dashboard', 'Booking site', 'R
 const timeLabels = ['As soon as possible', 'In 1–3 months', 'Flexible']
 
 const faqData = [
-  ['Do you work with clients outside Ghana?', 'Yes. I’m based in Accra and work remotely with teams in other countries, including the UK and the US.'],
+  ['Do you work with clients outside Ghana?', 'Yes. I’m based in Accra and work remotely with teams in other countries.'],
   ['What do you need from me to get started?', 'A short description of the project, any designs or brand assets you already have, and your ideal timeline. We’ll fill in the rest on a first call.'],
-  ['Can you work from my existing designs?', '[Confirm your answer — e.g. yes, I can build from Figma files or design the UI with you.]'],
-  ['How much does a project cost?', '[Add how you price — fixed quote per project, day rate, or a starting-from figure.]'],
+  ['Can you work from my existing designs?', 'Yes, I can build from Figma files or design the UI with you.'],
+  // ['How much does a project cost?', '[Add how you price — fixed quote per project, day rate, or a starting-from figure.]'],
 ]
 
 const chipStyle = { height: 44, padding: '0 16px', borderRadius: 999, border: '1px solid var(--line)', background: 'transparent', color: 'var(--ink)', font: 'inherit', fontSize: 15, cursor: 'pointer' }

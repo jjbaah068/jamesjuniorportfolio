@@ -1,9 +1,9 @@
 import { Link } from 'react-router'
 import Header from '../components/header'
 import useAccraClock from '../hooks/useAccraClock'
-import { featured } from '../data/projects'
+import { featured, projects, projectHref } from '../data/projects'
 import { SOCIALS, whatsappHref } from '../data/site'
-import portrait from '../assets/images/portrait.jpg'
+import portrait from '../assets/images/portrait.webp'
 
 const builds = ['SaaS platforms.', 'Admin dashboards.', 'Booking sites.', 'Brand websites.', 'Design systems.']
 // Spaces become non-breaking so they don't collapse inside the inline-block letters
@@ -44,7 +44,7 @@ export default function Home() {
             </h1>
             <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-end', justifyContent: 'space-between', gap: 24 }}>
               <p style={{ margin: 0, maxWidth: 460, fontSize: 20, lineHeight: 1.4, letterSpacing: '-0.01em' }}>
-                Frontend developer building React interfaces that feel <span style={{ color: 'var(--accent)', fontWeight: 600 }}>alive</span> — fast, accessible and a little bit playful.
+                Software engineer building web products that feel <span style={{ color: 'var(--accent)', fontWeight: 600 }}>alive</span> — fast, accessible and a little bit playful.
               </p>
               <Link to="/work" className="pill-btn" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, height: 52, padding: '0 24px', borderRadius: 999, background: 'var(--accent)', color: '#fff', fontWeight: 600 }}>See the work ↗</Link>
             </div>
@@ -55,7 +55,6 @@ export default function Home() {
             <Link to="/about" style={{ position: 'absolute', left: 12, right: 12, bottom: 12, display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, padding: '12px 16px', borderRadius: 18, background: 'rgba(255,255,255,.9)', color: '#111', textDecoration: 'none' }}>
               <span style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.25 }}>
                 <span style={{ fontWeight: 600 }}>James Junior Baah</span>
-                <span className="mono" style={{ fontSize: 11, color: '#4A4945' }}>Co-founder · Nexux</span>
               </span>
               <span style={{ fontSize: 14, fontWeight: 600 }}>About me →</span>
             </Link>
@@ -87,11 +86,11 @@ export default function Home() {
       <section className="wrap" style={{ paddingTop: 96, display: 'flex', flexDirection: 'column', gap: 28 }}>
         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-end', gap: 16 }}>
           <h2 style={sectionTitle}>Featured work</h2>
-          <Link to="/work" className="textlink" style={{ fontWeight: 600 }}>All projects (08) →</Link>
+          <Link to="/work" className="textlink" style={{ fontWeight: 600 }}>All projects ({String(projects.length).padStart(2, '0')}) →</Link>
         </div>
         <div className="three">
           {featured.map((p) => (
-            <Link key={p.name} to={p.href} className="tile card" style={{ display: 'flex', flexDirection: 'column', borderRadius: 28, background: 'var(--tile)', overflow: 'hidden', color: 'inherit' }}>
+            <Link key={p.name} to={projectHref(p)} className="tile card" style={{ display: 'flex', flexDirection: 'column', borderRadius: 28, background: 'var(--tile)', overflow: 'hidden', color: 'inherit' }}>
               <div style={{ position: 'relative', aspectRatio: '5 / 4', overflow: 'hidden' }}>
                 <div className="thumb" style={{ position: 'absolute', inset: 0, background: p.tint, color: '#fff', display: 'flex', alignItems: 'flex-end', padding: 24 }}>
                   <span style={{ fontSize: 120, fontWeight: 800, letterSpacing: '-0.07em', lineHeight: 0.8 }}>{p.mono}</span>
